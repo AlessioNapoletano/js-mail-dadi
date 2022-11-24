@@ -34,7 +34,7 @@ if (dado2 == 0) {
 }
 
 //Dichiaro le variabili giocatore1 e giocatore2
-let giocatore1 = ["Alessio" , dado];
+let giocatore1 = ["Alessio", dado];
 let giocatore2 = ["Axel", dado2];
 
 //Stampo in index html il valore di player1
@@ -50,21 +50,30 @@ playerInput2.innerHTML = player2;
 const result = document.getElementById("resultGameDice");
 
 
-//confronto (prendo il valore del dado "giocatore1[1]" e lo confronto con il valore del dado del giocatore2[1])
-if (giocatore1[1] > giocatore2[1]) {
-    console.log(giocatore1[0] + " HA VINTO");
-    result.innerHTML = giocatore1[0] + " HA VINTO";
-} else if (giocatore1[1] == giocatore2[1]) {
-    console.log(giocatore1[0] + " e " + giocatore2[0] + " hanno pareggiato");
-    result.innerHTML = giocatore1[0] + " e " + giocatore2[0] + " hanno pareggiato";
-} else {
-    console.log(giocatore2[0] + " HA VINTO");
-    result.innerHTML = giocatore2[0] + " HA VINTO";
-}
+const button = document.querySelector("a.btn");
 
-const diceResult = document.getElementById("dice_result");
-diceResult.innerHTML = giocatore1[0] + " Lancia il dado: " + giocatore1[1] + "</br>" 
+//Prova che il link con classe bottone è stato selezionato correttamente
+//button.innerHTML = "ciao";
+
+button.addEventListener("click", function () {
+    //confronto (prendo il valore del dado "giocatore1[1]" e lo confronto con il valore del dado del giocatore2[1])
+    if (giocatore1[1] > giocatore2[1]) {
+        console.log(giocatore1[0] + " HA VINTO");
+        result.innerHTML = giocatore1[0] + " HA VINTO";
+    } else if (giocatore1[1] == giocatore2[1]) {
+        console.log(giocatore1[0] + " e " + giocatore2[0] + " hanno pareggiato");
+        result.innerHTML = giocatore1[0] + " e " + giocatore2[0] + " hanno pareggiato";
+    } else {
+        console.log(giocatore2[0] + " HA VINTO");
+        result.innerHTML = giocatore2[0] + " HA VINTO";
+    }
+
+    const diceResult = document.getElementById("dice_result");
+    diceResult.innerHTML = giocatore1[0] + " Lancia il dado: " + giocatore1[1] + "</br>"
         + giocatore2[0] + " Lancia il dado: " + giocatore2[1];
+
+    
+});
 
 
 console.log(giocatore1);
