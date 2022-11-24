@@ -37,15 +37,37 @@ if (dado2 == 0) {
 let giocatore1 = ["Alessio" , dado];
 let giocatore2 = ["Axel", dado2];
 
+//Stampo in index html il valore di player1
+const playerInput1 = document.getElementById("player1");
+const player1 = giocatore1[0];
+playerInput1.innerHTML = player1;
+
+//stampo in index html il valore di player2
+const playerInput2 = document.getElementById("player2");
+const player2 = giocatore2[0];
+playerInput2.innerHTML = player2;
+
+const result = document.getElementById("resultGameDice");
+
+
 //confronto (prendo il valore del dado "giocatore1[1]" e lo confronto con il valore del dado del giocatore2[1])
 if (giocatore1[1] > giocatore2[1]) {
     console.log(giocatore1[0] + " HA VINTO");
+    result.innerHTML = giocatore1[0] + " HA VINTO";
 } else if (giocatore1[1] == giocatore2[1]) {
     console.log(giocatore1[0] + " e " + giocatore2[0] + " hanno pareggiato");
+    result.innerHTML = giocatore1[0] + " e " + giocatore2[0] + " hanno pareggiato";
 } else {
     console.log(giocatore2[0] + " HA VINTO");
+    result.innerHTML = giocatore2[0] + " HA VINTO";
 }
+
+const diceResult = document.getElementById("dice_result");
+diceResult.innerHTML = giocatore1[0] + " Lancia il dado: " + giocatore1[1] + "</br>" 
+        + giocatore2[0] + " Lancia il dado: " + giocatore2[1];
 
 
 console.log(giocatore1);
 console.log(giocatore2);
+
+
