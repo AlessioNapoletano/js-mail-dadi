@@ -14,10 +14,11 @@ Prima di partire a scrivere codice poniamoci qualche domanda: Che ci sia un arra
 //variabile dado, Generare numero da 1 a 6,
 //confronto tra dado del giocatore 1 e dado del giocatore 2
 
-
+//Inserisco il valore nelle varibiali dado e dado2
 let dado = Math.round(Math.random() * 6);
 let dado2 = Math.round(Math.random() * 6);
 
+//Se dado ha valore 0, allora aggiungo 1 a dado, cosi che il conteggio vada da 1 a 6
 if (dado == 0) {
     dado++;
     console.log("dado1 = " + dado);
@@ -32,10 +33,19 @@ if (dado2 == 0) {
     console.log("dado2 = " + dado2);
 }
 
-if (dado > dado2) {
-    console.log("Il primo dado ha vinto");
-} else if (dado == dado2) {
-    console.log("Parità tra i dadi")
+//Dichiaro le variabili giocatore1 e giocatore2
+let giocatore1 = ["Alessio" , dado];
+let giocatore2 = ["Axel", dado2];
+
+//confronto (prendo il valore del dado "giocatore1[1]" e lo confronto con il valore del dado del giocatore2[1])
+if (giocatore1[1] > giocatore2[1]) {
+    console.log(giocatore1[0] + " HA VINTO");
+} else if (giocatore1[1] == giocatore2[1]) {
+    console.log(giocatore1[0] + " e " + giocatore2[0] + " hanno pareggiato");
 } else {
-    console.log("Il secondo dado ha vinto");
+    console.log(giocatore2[0] + " HA VINTO");
 }
+
+
+console.log(giocatore1);
+console.log(giocatore2);
