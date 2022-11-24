@@ -9,9 +9,9 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
 //Prendo il link con classe bottone
 const button = document.querySelector("a.btn");
 
-let count1 = 0;
-let count2 = 0;
-let count3 = 0;
+let winPlayer1 = 0;
+let winPlayer2 = 0;
+let balance = 0;
 
 //Prova che il link con classe bottone è stato selezionato correttamente
 //button.innerHTML = "ciao";
@@ -59,27 +59,27 @@ button.addEventListener("click", function () {
     if (giocatore1[1] > giocatore2[1]) {
         console.log(giocatore1[0] + " HA VINTO");
         result.innerHTML = giocatore1[0] + " HA VINTO";
-        count1++;
-        console.log(count1);
+        winPlayer1++;
+        console.log(winPlayer1);
     } else if (giocatore1[1] == giocatore2[1]) {
         console.log(giocatore1[0] + " e " + giocatore2[0] + " hanno pareggiato");
         result.innerHTML = giocatore1[0] + " e " + giocatore2[0] + " hanno pareggiato";
-        count3++;
+        balance++;
     } else {
         console.log(giocatore2[0] + " HA VINTO");
         result.innerHTML = giocatore2[0] + " HA VINTO";
-        count2++;
+        winPlayer2++;
     }
 
     const diceResult = document.getElementById("dice_result");
     diceResult.innerHTML = giocatore1[0] + " Lancia il dado: " + giocatore1[1] + "</br>"
         + giocatore2[0] + " Lancia il dado: " + giocatore2[1];
 
-    console.log(count1);
+    console.log(winPlayer1);
     const finalResult = document.getElementById("final_result");
-    finalResult.innerHTML = giocatore1[0] + " Ha totalizzato: " + count1 + " Vittorie"
-        + "</br>" + giocatore2[0] + " Ha totalizzato: " + count2 + " Vittorie" 
-        + "</br>" + "Pareggi Totali: " + count3;
+    finalResult.innerHTML = giocatore1[0] + " Ha totalizzato: " + winPlayer1 + " Vittorie"
+        + "</br>" + giocatore2[0] + " Ha totalizzato: " + winPlayer2 + " Vittorie" 
+        + "</br>" + "Pareggi Totali: " + balance;
 
     //Stampo in console i risultati    
     console.log(giocatore1);

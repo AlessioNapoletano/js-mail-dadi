@@ -9,7 +9,7 @@ PROGRAMMA 2 - Mail
 const listEmail = [
     "alessio.napoletano@cosaguardi.com",
     "alessio.napoli@ancoracheguardi.net",
-    "alessio.napoli@vabbuòUFratedavveroFai.org" , 
+    "alessio.napoli@vabbuòUFratedavveroFai.org",
     "alessio.napoli@ammaFaETarantelle.org"
 ];
 
@@ -25,7 +25,7 @@ const inputEmail = document.getElementById("userEmail");
 
 button.addEventListener("click", function () {
     //variabile con valore 0 o 1 se la varibile vale ' la mail non è stata trovata se vale 1 si
-    let count = 0;
+    let verify = false;
     //prendo il valore del campo input
     const mail = inputEmail.value;
     console.log(mail);
@@ -33,12 +33,12 @@ button.addEventListener("click", function () {
     for (let i = 0; i < listEmail.length; i++) {
 
         if (mail === listEmail[i]) {
-            count++;
-        } else{
-            
+            verify = true;
+        } else {
+
         }
 
-        if (count != 0) {
+        if (verify != false) {
             document.getElementById("output").innerHTML = "Mail trovata!";
         } else {
             document.getElementById("output").innerHTML = "Mail non trovata!";
