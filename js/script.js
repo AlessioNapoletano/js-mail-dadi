@@ -19,23 +19,9 @@ let balance = 0;
 //In realtà qui cè solo il confronto, i dadi sono gia stati lanciati
 button.addEventListener("click", function () {
     //Inserisco il valore nelle varibiali dado e dado2
-    let dado = Math.round(Math.random() * 6);
-    let dado2 = Math.round(Math.random() * 6);
+    let dado = Math.floor((Math.random() * 6) + 1);
+    let dado2 = Math.floor((Math.random() * 6) + 1);
 
-    //Se dado ha valore 0, allora aggiungo 1 a dado, cosi che il conteggio vada da 1 a 6
-    if (dado == 0) {
-        dado++;
-        console.log("dado1 = " + dado);
-    } else {
-        console.log("dado1 = " + dado);
-    }
-
-    if (dado2 == 0) {
-        dado2++;
-        console.log("dado2 = " + dado2);
-    } else {
-        console.log("dado2 = " + dado2);
-    }
 
     //Dichiaro le variabili giocatore1 e giocatore2
     let giocatore1 = ["Alessio", dado];
@@ -78,7 +64,7 @@ button.addEventListener("click", function () {
     console.log(winPlayer1);
     const finalResult = document.getElementById("final_result");
     finalResult.innerHTML = giocatore1[0] + " Ha totalizzato: " + winPlayer1 + " Vittorie"
-        + "</br>" + giocatore2[0] + " Ha totalizzato: " + winPlayer2 + " Vittorie" 
+        + "</br>" + giocatore2[0] + " Ha totalizzato: " + winPlayer2 + " Vittorie"
         + "</br>" + "Pareggi Totali: " + balance;
 
     //Stampo in console i risultati    

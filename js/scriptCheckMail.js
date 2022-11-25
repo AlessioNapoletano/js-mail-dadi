@@ -34,16 +34,15 @@ button.addEventListener("click", function () {
 
         if (mail === listEmail[i]) {
             verify = true;
-        } else {
-
-        }
-
-        if (verify != false) {
-            document.getElementById("output").innerHTML = "Mail trovata!";
-        } else {
-            document.getElementById("output").innerHTML = "Mail non trovata!";
         }
     }
+    
+    if (verify != false) {
+        document.getElementById("output").innerHTML = "Mail trovata!";
+    } else {
+        document.getElementById("output").innerHTML = "Mail non trovata!";
+    }
+
 
 });
 
